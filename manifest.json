@@ -6,6 +6,10 @@
 
     "description": "ask.fm shortcut mod",
 
+    "permissions": [
+        "http://ask.fm/*"
+    ], 
+
     "content_scripts": [
         {
             "matches": ["http://ask.fm/*"],
