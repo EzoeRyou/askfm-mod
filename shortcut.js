@@ -3,30 +3,37 @@ function listener( evt )
     // check if keyup key is the shortcut key : Esc
     if ( evt.keyCode != 27 )
         return ;
-
-    // click answer input
-    var a = document.getElementById("question_submit") ;
-
-    if ( a )
+ 
+    // choose the latest answer
+    if ( window.location.href == "https://ask.fm/account/inbox" )
     {
-        var t = document.getElementsByTagName("textarea")[0] ;
-        if ( t.value == "" )
+        var a = document.getElementsByClassName("inboxItem-answerButton")[0] ;
+        console.log( a ) ;
+        if ( a )
         {
-            t.value = "質問ではない。" ;
+            window.location.href = a.href ;
+            return ;
         }
+    }
+    else
+    {
+        // click answer input
+        var a = document.getElementsByClassName("optionsBar-submit")[0] ;
+        console.log(a) ;
+        if ( a )
+        {
+            var t = document.getElementsByTagName("textarea")[0] ;
+            if ( t.value == "" )
+            {
+                t.value = "質問ではない。" ;
+            }
 
-        a.click() ;
-        return ;
+            a.click() ;
+            return ;
+        }
     }
 
-    // else
-    // choose the latest answer
-    var a = document.querySelector(" .answer-linkBox a.link-blue") ;
-    if ( a )
-    {
-        window.location.href = a.href ;
-        return ;
-    } 
+
 }
 
 

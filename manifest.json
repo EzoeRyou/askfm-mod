@@ -7,12 +7,12 @@
     "description": "ask.fm shortcut mod",
 
     "permissions": [
-        "http://ask.fm/*"
+        "https://ask.fm/*"
     ], 
 
     "content_scripts": [
         {
-            "matches": ["http://ask.fm/*"],
+            "matches": ["https://ask.fm/*"],
             "js": ["shortcut.js"]
         }
     ]
