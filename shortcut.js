@@ -7,30 +7,24 @@ function listener( evt )
     // choose the latest answer
     if ( window.location.href == "https://ask.fm/account/inbox" )
     {
-        var a = document.getElementsByClassName("inboxItem-answerButton")[0] ;
-        console.log( a ) ;
-        if ( a )
-        {
-            window.location.href = a.href ;
-            return ;
-        }
+        var a = document.querySelector("a.btn-secondary.icon-caret-right") ;
+
+        window.location.href = a.href ;
+        return ;
     }
     else
     {
         // click answer input
-        var a = document.getElementsByClassName("optionsBar-submit")[0] ;
-        console.log(a) ;
-        if ( a )
+        var button = document.getElementsByTagName("button")[0] ;
+        var t = document.getElementsByTagName("textarea")[0] ;
+        if ( t.value == "" )
         {
-            var t = document.getElementsByTagName("textarea")[0] ;
-            if ( t.value == "" )
-            {
-                t.value = "質問ではない。" ;
-            }
-
-            a.click() ;
-            return ;
+            t.value = "質問ではない。" ;
         }
+
+        button.click() ;
+        return ;
+
     }
 
 
