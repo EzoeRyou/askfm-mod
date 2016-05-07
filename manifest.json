@@ -7,7 +7,8 @@
     "description": "ask.fm shortcut mod",
 
     "permissions": [
-        "https://ask.fm/*"
+        "https://ask.fm/*",
+        "http://ask.fm/*"
     ], 
 
     "content_scripts": [
