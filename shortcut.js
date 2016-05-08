@@ -5,7 +5,7 @@ function listener( evt )
         return ;
  
     // choose the latest answer
-    if ( window.location.href == "https://ask.fm/account/inbox" )
+    if ( window.location.pathname == "/account/inbox")
     {
         var a = document.querySelector("a.btn-secondary.icon-caret-right") ;
 
